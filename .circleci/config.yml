@@ -53,8 +53,8 @@ workflows:
               ignore:
                 - main
       - say-goodbye:
-        requires:
-          - say-hello
+          requires:
+            - say-hello
       - turn-off-microphone:
           requires:
             - say-goodbye

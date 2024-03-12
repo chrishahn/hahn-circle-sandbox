@@ -36,7 +36,11 @@ jobs:
 workflows:
   default_workflow:
     jobs:
-      - say-hello
+      - say-hello:
+          - filters:
+              - branches:
+                  - only:
+                      - main
       - turn-off-microphone:
           requires:
             - say-hello

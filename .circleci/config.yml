@@ -37,10 +37,10 @@ workflows:
   default_workflow:
     jobs:
       - say-hello:
-        filters:
-          branches:
-            only:
-              - main
+          filters:
+            branches:
+              only:
+                - main
       - turn-off-microphone:
           requires:
             - say-hello

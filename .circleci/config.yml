@@ -44,3 +44,7 @@ workflows:
       - turn-off-microphone:
           requires:
             - say-hello
+          filters:
+            branches:
+              only:
+                - main

@@ -34,7 +34,7 @@ jobs:
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/workflows/ & https://circleci.com/docs/configuration-reference/#workflows
 workflows:
-  default_workflow:
+  main_workflow:
     jobs:
       - say-hello:
           filters:
@@ -44,3 +44,17 @@ workflows:
       - turn-off-microphone:
           requires:
             - say-hello
+
+  alternate_workflow:
+    jobs:
+      - say-hello:
+          filters:
+            branches:
+              ignore:
+                - main
+      - say-goodbye:
+        requires:
+          - say-hello
+      - turn-off-microphone:
+          requires:
+            - say-goodbye

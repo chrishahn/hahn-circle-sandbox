@@ -38,5 +38,5 @@ workflows:
     jobs:
       - say-hello
       - turn-off-microphone:
-        requires:
-          - say-hello
+          requires:
+            - say-hello
